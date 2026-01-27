@@ -1,0 +1,24 @@
+# Godot 4+ specific
+.godot/
+*.translation
+
+# Godot-specific likely generated files
+export_presets.cfg
+export_credentials.cfg
+
+# Mono/C#
+.mono/
+data_*/
+mono_crash.*.json
+.vs/
+bin/
+obj/
+*.csproj.user
+*.sln.user
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.gen.cs

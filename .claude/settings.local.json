@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__godot-mcp__list_projects",
+      "mcp__godot-mcp__launch_editor",
+      "Bash(xargs:*)"
+    ]
+  }
+}
