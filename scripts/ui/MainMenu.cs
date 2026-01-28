@@ -19,6 +19,7 @@ public partial class MainMenu : Control
     private void OnStartPressed()
     {
         GD.Print("Start Pressed");
+        GetNode<GameManager>("/root/GameManager").ResetGame();
         var result = GetTree().ChangeSceneToFile("res://scenes/Main.tscn");
         GD.Print($"ChangeSceneToFile result: {result}");
     }

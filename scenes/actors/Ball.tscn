@@ -6,13 +6,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 15.0
 
-[node name="Ball" type="CharacterBody2D"]
+[node name="Ball" type="CharacterBody2D" groups=["Balls"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.234, 0.234)
+scale = Vector2(0.469, 0.469)
 texture = ExtResource("2_icon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

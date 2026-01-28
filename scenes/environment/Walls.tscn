@@ -17,5 +17,5 @@ position = Vector2(-10, 300)
 shape = SubResource("Rect_Side")
 
 [node name="Right" type="CollisionShape2D" parent="."]
-position = Vector2(810, 300)
+position = Vector2(800, 300)
 shape = SubResource("Rect_Side")

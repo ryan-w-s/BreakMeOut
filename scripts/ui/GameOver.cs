@@ -5,6 +5,20 @@ public partial class GameOver : Control
 {
     public override void _Ready()
     {
+        var gm = GetNode<GameManager>("/root/GameManager");
+        var label = GetNode<Label>("VBoxContainer/Label");
+        
+        if (gm.IsVictory)
+        {
+            label.Text = "YOU WIN!";
+            label.Modulate = new Color(0, 1, 0); // Green
+        }
+        else
+        {
+            label.Text = "GAME OVER";
+            label.Modulate = new Color(1, 0, 0); // Red
+        }
+
         GetNode<Button>("VBoxContainer/RestartButton").Pressed += OnRestartPressed;
         GetNode<Button>("VBoxContainer/MenuButton").Pressed += OnMenuPressed;
     }

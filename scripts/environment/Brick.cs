@@ -9,6 +9,11 @@ public partial class Brick : StaticBody2D
 
     private int Health = 1;
 
+    public override void _Ready()
+    {
+        GetNode<GameManager>("/root/GameManager").RegisterBrick();
+    }
+
     public void Hit()
     {
         Health--;
@@ -25,7 +30,9 @@ public partial class Brick : StaticBody2D
                 GetTree().CurrentScene.CallDeferred("add_child", ball);
             }
             
-            GetNode<GameManager>("/root/GameManager").AddScore(100);
+            var gm = GetNode<GameManager>("/root/GameManager");
+            gm.AddScore(100);
+            gm.BrickDestroyed();
             QueueFree();
         }
     }

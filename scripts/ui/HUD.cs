@@ -23,6 +23,16 @@ public partial class HUD : CanvasLayer
         }
     }
 
+    public override void _ExitTree()
+    {
+        var gm = GetNode<GameManager>("/root/GameManager");
+        if (gm != null)
+        {
+            gm.ScoreChanged -= UpdateScore;
+            gm.LivesChanged -= UpdateLives;
+        }
+    }
+
     public void UpdateScore(int score)
     {
         if (_scoreLabel != null)

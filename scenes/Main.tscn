@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="1_hud"]
 [ext_resource type="PackedScene" path="res://scenes/environment/Walls.tscn" id="2_walls"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" path="res://scenes/actors/Paddle.tscn" id="4_paddle"]
 [ext_resource type="PackedScene" path="res://scenes/actors/Ball.tscn" id="5_ball"]
 [ext_resource type="PackedScene" path="res://scenes/environment/Brick.tscn" id="6_brick"]
+[ext_resource type="Script" path="res://scripts/Main.cs" id="7_main_script"]
 
 [node name="Main" type="Node"]
+script = ExtResource("7_main_script")
+BallScene = ExtResource("5_ball")
 
 [node name="HUD" parent="." instance=ExtResource("1_hud")]
 

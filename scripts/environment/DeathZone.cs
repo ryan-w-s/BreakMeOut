@@ -16,8 +16,12 @@ public partial class DeathZone : Area2D
     {
         if (body is Ball)
         {
+            var balls = GetTree().GetNodesInGroup("Balls");
+            if (balls.Count <= 1)
+            {
+                _gameManager?.LoseLife();
+            }
             body.QueueFree(); // Destroy the ball
-            _gameManager?.LoseLife();
         }
     }
 }
