@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="1_hud"]
+[ext_resource type="PackedScene" path="res://scenes/environment/Walls.tscn" id="2_walls"]
+[ext_resource type="PackedScene" path="res://scenes/environment/DeathZone.tscn" id="3_death"]
+[ext_resource type="PackedScene" path="res://scenes/actors/Paddle.tscn" id="4_paddle"]
+[ext_resource type="PackedScene" path="res://scenes/actors/Ball.tscn" id="5_ball"]
+[ext_resource type="PackedScene" path="res://scenes/environment/Brick.tscn" id="6_brick"]
+
+[node name="Main" type="Node"]
+
+[node name="HUD" parent="." instance=ExtResource("1_hud")]
+
+[node name="Walls" parent="." instance=ExtResource("2_walls")]
+
+[node name="DeathZone" parent="." instance=ExtResource("3_death")]
+
+[node name="Paddle" parent="." instance=ExtResource("4_paddle")]
+position = Vector2(400, 550)
+
+[node name="Ball" parent="." instance=ExtResource("5_ball")]
+position = Vector2(400, 400)
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="Brick1" parent="Bricks" instance=ExtResource("6_brick")]
+position = Vector2(100, 100)
+
+[node name="Brick2" parent="Bricks" instance=ExtResource("6_brick")]
+position = Vector2(200, 100)
+
+[node name="Brick3" parent="Bricks" instance=ExtResource("6_brick")]
+position = Vector2(300, 100)
+
+[node name="Brick4" parent="Bricks" instance=ExtResource("6_brick")]
+position = Vector2(400, 100)
+
+[node name="Brick5" parent="Bricks" instance=ExtResource("6_brick")]
+position = Vector2(500, 100)
+
+[node name="Brick6" parent="Bricks" instance=ExtResource("6_brick")]
+position = Vector2(600, 100)
+
+[node name="Brick7" parent="Bricks" instance=ExtResource("6_brick")]
+position = Vector2(700, 100)

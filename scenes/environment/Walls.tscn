@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[sub_resource type="RectangleShape2D" id="Rect_Top"]
+size = Vector2(840, 20)
+
+[sub_resource type="RectangleShape2D" id="Rect_Side"]
+size = Vector2(20, 640)
+
+[node name="Walls" type="StaticBody2D"]
+
+[node name="Top" type="CollisionShape2D" parent="."]
+position = Vector2(400, -10)
+shape = SubResource("Rect_Top")
+
+[node name="Left" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 300)
+shape = SubResource("Rect_Side")
+
+[node name="Right" type="CollisionShape2D" parent="."]
+position = Vector2(810, 300)
+shape = SubResource("Rect_Side")

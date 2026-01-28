@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/environment/Brick.cs" id="1_script"]
+[ext_resource type="Texture2D" path="res://icon.png" id="2_icon"]
+[ext_resource type="PackedScene" path="res://scenes/actors/Ball.tscn" id="3_ball"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(80, 30)
+
+[node name="Brick" type="StaticBody2D" groups=["Bricks"]]
+collision_layer = 4
+script = ExtResource("1_script")
+BallScene = ExtResource("3_ball")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.8, 0.2, 0.2, 1)
+scale = Vector2(0.625, 0.234)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
