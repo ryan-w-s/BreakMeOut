@@ -4,7 +4,9 @@ A Breakout-style game built with Godot 4.6 (Mono/C#).
 
 ## Project Overview
 
-**BreakMeOut** is a game built with Godot 4.6 (Mono/C#). 
+**BreakMeOut** is a game built with Godot 4.6 (Mono/C#).
+The player controls a paddle to bounce a ball, which lowers brick health when hit.
+Bricks spawn another ball when they break.
 
 ## Engine & Tooling
 
