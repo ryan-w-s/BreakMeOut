@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://i3aflfo5mr2r"]
 
-[ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_script"]
+[ext_resource type="Script" uid="uid://bk7i0tuuux86p" path="res://scripts/ui/MainMenu.cs" id="1_script"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=114030431]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1467079229]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -26,15 +26,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=982527357]
 layout_mode = 2
 text = "BREAK ME OUT"
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=797412463]
 layout_mode = 2
 text = "START GAME"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1656200001]
 layout_mode = 2
 text = "QUIT"

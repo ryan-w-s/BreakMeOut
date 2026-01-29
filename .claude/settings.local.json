@@ -3,7 +3,14 @@
     "allow": [
       "mcp__godot-mcp__list_projects",
       "mcp__godot-mcp__launch_editor",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "mcp__godot-mcp__run_project",
+      "mcp__godot-mcp__get_debug_output",
+      "mcp__godot-mcp__stop_project",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\ryans\\\\Documents\\\\Projects\\\\BreakMeOut\\\\scripts\" -Recurse -Filter \"*.cs\")",
+      "Bash(Select-Object FullName)"
     ]
   }
 }

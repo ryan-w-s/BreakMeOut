@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/environment/DeathZone.cs" id="1_script"]
 
 [sub_resource type="RectangleShape2D" id="Rect_Death"]
-size = Vector2(840, 20)
+size = Vector2(1320, 20)
 
 [node name="DeathZone" type="Area2D"]
 collision_layer = 8
@@ -11,5 +11,5 @@ collision_mask = 2
 script = ExtResource("1_script")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(400, 620)
+position = Vector2(640, 730)
 shape = SubResource("Rect_Death")
