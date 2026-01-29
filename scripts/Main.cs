@@ -7,9 +7,6 @@ public partial class Main : Node
 
     public override void _Ready()
     {
-        var paddle = GetNode<Node2D>("Paddle");
-        GD.Print($"Main _Ready - Paddle Position: {paddle.Position}, Paddle GlobalPosition: {paddle.GlobalPosition}");
-
         var gm = GetNode<GameManager>("/root/GameManager");
         if (gm != null)
         {

@@ -5,11 +5,6 @@ public partial class Paddle : CharacterBody2D
 {
 	[Export] public float Speed = 400.0f;
 
-	public override void _Ready()
-	{
-		GD.Print($"Paddle _Ready - Position: {Position}, GlobalPosition: {GlobalPosition}");
-	}
-
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Vector2.Zero;
