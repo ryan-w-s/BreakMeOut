@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" path="res://scenes/actors/Ball.tscn" id="3_ball"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(80, 30)
+size = Vector2(40, 40)
 
 [node name="Brick" type="StaticBody2D" groups=["Bricks"]]
 collision_layer = 4
@@ -14,8 +14,24 @@ BallScene = ExtResource("3_ball")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.8, 0.2, 0.2, 1)
-scale = Vector2(0.625, 0.234)
+scale = Vector2(0.313, 0.313)
 texture = ExtResource("2_icon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1")
+
+[node name="HealthLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
