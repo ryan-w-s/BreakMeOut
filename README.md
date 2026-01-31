@@ -52,8 +52,12 @@ This project has Godot MCP server enabled, allowing agents to:
 - Run and debug the project
 - Get project metadata
 
+Generally, you should prefer to use the godot-mcp tools if one exists for the task you are doing.
+
 ## Notes
 
 - The project uses Godot's unique identifier (UID) system for referencing resources
 - Scene files are text-based and can be read/edited directly
 - C# scripts compile automatically when the project is run
+- Using "run with debug" is the preferred way to run the game because it gives you debug logs back
+
