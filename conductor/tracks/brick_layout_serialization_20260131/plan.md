@@ -15,7 +15,7 @@
 - [x] Task: Refactor `Main.cs` or `GameManager.cs` to use the `LevelSerializer` to load a level file at startup. [df511fd]
 - [x] Task: Implement the brick spawning logic that iterates through the loaded 2D array and instantiates the `Brick` scene. [df511fd]
 - [x] Task: Verify that the game correctly handles different brick health values from the serialized data. [df511fd]
-- [ ] Task: Conductor - User Manual Verification 'Dynamic Level Loading' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Dynamic Level Loading' (Protocol in workflow.md) [39454c7]
 
 ## Phase 4: Final Verification
 - [ ] Task: Run full regression tests on core gameplay (paddle, ball, brick collision).
