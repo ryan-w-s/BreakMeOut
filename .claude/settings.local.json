@@ -11,7 +11,13 @@
       "mcp__godot-mcp__get_debug_output",
       "mcp__godot-mcp__run_with_debug",
       "mcp__context7__resolve-library-id",
-      "mcp__context7__query-docs"
+      "mcp__context7__query-docs",
+      "Bash(dotnet build:*)",
+      "Bash(dotnet restore:*)",
+      "mcp__web-reader__webReader",
+      "mcp__web-search-prime__webSearchPrime",
+      "mcp__zread__read_file",
+      "Bash(dotnet test:*)"
     ]
   }
 }
