@@ -12,7 +12,7 @@
 - [x] Task: Conductor - User Manual Verification 'Serialization System' (Protocol in workflow.md) [20a9686]
 
 ## Phase 3: Dynamic Level Loading
-- [ ] Task: Refactor `Main.cs` or `GameManager.cs` to use the `LevelSerializer` to load a level file at startup.
+- [x] Task: Refactor `Main.cs` or `GameManager.cs` to use the `LevelSerializer` to load a level file at startup. [df511fd]
 - [ ] Task: Implement the brick spawning logic that iterates through the loaded 2D array and instantiates the `Brick` scene.
 - [ ] Task: Verify that the game correctly handles different brick health values from the serialized data.
 - [ ] Task: Conductor - User Manual Verification 'Dynamic Level Loading' (Protocol in workflow.md)
