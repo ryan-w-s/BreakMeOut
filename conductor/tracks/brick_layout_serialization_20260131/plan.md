@@ -18,6 +18,6 @@
 - [x] Task: Conductor - User Manual Verification 'Dynamic Level Loading' (Protocol in workflow.md) [39454c7]
 
 ## Phase 4: Final Verification
-- [ ] Task: Run full regression tests on core gameplay (paddle, ball, brick collision).
-- [ ] Task: Ensure code adheres to C# and Godot style guides.
+- [x] Task: Run full regression tests on core gameplay (paddle, ball, brick collision). [af80375]
+- [x] Task: Ensure code adheres to C# and Godot style guides. [af80375]
 - [ ] Task: Conductor - User Manual Verification 'Final Verification' (Protocol in workflow.md)
