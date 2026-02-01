@@ -13,3 +13,5 @@
 ## Development Tools
 - **Godot Editor:** For scene composition, level design, and asset management.
 - **IDE:** Visual Studio or VS Code (implied for C# development).
+- **System.Text.Json:** For level data serialization and deserialization.
+- **NUnit:** For unit testing core utility logic.
