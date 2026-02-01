@@ -5,7 +5,7 @@
 - [x] Task: Create a prototype script to procedurally generate the high-density brick grid in the Main scene. [36a4764]
 - [x] Task: Conductor - User Manual Verification 'Layout Optimization' (Protocol in workflow.md) [79b99dc]
 
-## Phase 2: Serialization System
+## Phase 2: Serialization System [checkpoint: be6bc37]
 - [x] Task: Define the level data structure (e.g., `LevelData` class with a 2D `int[,]` array). [76ac516]
 - [x] Task: Implement a `LevelSerializer` utility to save/load `LevelData` to/from JSON files. [2eaf669]
 - [x] Task: Write unit tests for the `LevelSerializer` to ensure correct conversion to/from 2D arrays. [2eaf669]
