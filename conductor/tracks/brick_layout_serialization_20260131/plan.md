@@ -7,8 +7,8 @@
 
 ## Phase 2: Serialization System
 - [x] Task: Define the level data structure (e.g., `LevelData` class with a 2D `int[,]` array). [76ac516]
-- [ ] Task: Implement a `LevelSerializer` utility to save/load `LevelData` to/from JSON files.
-- [ ] Task: Write unit tests for the `LevelSerializer` to ensure correct conversion to/from 2D arrays.
+- [x] Task: Implement a `LevelSerializer` utility to save/load `LevelData` to/from JSON files. [2eaf669]
+- [x] Task: Write unit tests for the `LevelSerializer` to ensure correct conversion to/from 2D arrays. [2eaf669]
 - [ ] Task: Conductor - User Manual Verification 'Serialization System' (Protocol in workflow.md)
 
 ## Phase 3: Dynamic Level Loading
