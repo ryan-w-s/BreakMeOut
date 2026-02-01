@@ -14,11 +14,21 @@ public partial class Brick : StaticBody2D
 
 	public override void _Ready()
 	{
-		_healthLabel = GetNode<Label>("HealthLabel");
-		_colorRect = GetNode<ColorRect>("ColorRect");
+		_healthLabel = GetNodeOrNull<Label>("HealthLabel");
+		_colorRect = GetNodeOrNull<ColorRect>("ColorRect");
 		UpdateHealthDisplay();
 		UpdateColor();
 		GetNode<GameManager>("/root/GameManager").RegisterBrick();
+	}
+
+	public void SetHealth(int health)
+	{
+		Health = health;
+		if (IsInsideTree())
+		{
+			UpdateHealthDisplay();
+			UpdateColor();
+		}
 	}
 
 	public void Hit()
@@ -36,7 +46,6 @@ public partial class Brick : StaticBody2D
 			{
 				var ball = BallScene.Instantiate<Node2D>();
 				ball.GlobalPosition = GlobalPosition;
-				// Add to main scene root or a container if possible
 				GetTree().CurrentScene.CallDeferred("add_child", ball);
 			}
 
@@ -61,11 +70,11 @@ public partial class Brick : StaticBody2D
 		{
 			_colorRect.Color = Health switch
 			{
-				1 => new Color(0.2f, 0.8f, 0.2f), // Green (1 hit)
-				2 => new Color(0.2f, 0.6f, 1f),  // Blue (2 hits)
-				3 => new Color(1f, 1f, 0.2f),    // Yellow (3 hits)
-				4 => new Color(1f, 0.6f, 0.2f),  // Orange (4 hits)
-				_ => new Color(1f, 0.2f, 0.2f)   // Red (5+ hits)
+				1 => new Color(0.2f, 0.8f, 0.2f), // Green
+				2 => new Color(0.2f, 0.6f, 1f),  // Blue
+				3 => new Color(1f, 1f, 0.2f),    // Yellow
+				4 => new Color(1f, 0.6f, 0.2f),  // Orange
+				_ => new Color(1f, 0.2f, 0.2f)   // Red
 			};
 		}
 	}
