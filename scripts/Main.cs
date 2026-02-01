@@ -48,7 +48,7 @@ public partial class Main : Node
         if (BallScene != null)
         {
             var ball = BallScene.Instantiate<Node2D>();
-            ball.GlobalPosition = new Vector2(640, 450);
+            ball.GlobalPosition = new Vector2(640, 600);
             AddChild(ball);
         }
     }

@@ -33,7 +33,7 @@ collision_mask = 6
 script = ExtResource("9_hqwje")
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=1728968256 groups=["Balls"] instance=ExtResource("5_ball")]
-position = Vector2(640, 400)
+position = Vector2(640, 600)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("10_77kyi")

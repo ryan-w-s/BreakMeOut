@@ -30,7 +30,7 @@ public partial class GridGenerator : Node2D
         
         GD.Print($"Generating Grid: Cols={layout.Columns}, Width={layout.BrickWidth}, MarginX={layout.MarginX}");
 
-        int startY = 100; // Top margin
+        int startY = 50; // Top margin reduced
 
         // Calculate scale factor
         // Target is layout.BrickWidth (e.g., 40)
