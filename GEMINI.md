@@ -27,6 +27,14 @@ Bricks spawn another ball when they break.
 - Configure export presets in Godot Editor (Project > Export)
 - Export through: Project > Export > Export Project
 
+### Testing
+Run tests from the project root:
+```bash
+dotnet test
+```
+
+Tests are located in the `tests/` directory and use standard .NET testing frameworks like NUnit.
+
 ## Architecture
 
 This project is in initial setup. As development progresses, typical Godot patterns to follow:
