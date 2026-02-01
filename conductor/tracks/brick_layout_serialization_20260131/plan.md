@@ -11,7 +11,7 @@
 - [x] Task: Write unit tests for the `LevelSerializer` to ensure correct conversion to/from 2D arrays. [2eaf669]
 - [x] Task: Conductor - User Manual Verification 'Serialization System' (Protocol in workflow.md) [20a9686]
 
-## Phase 3: Dynamic Level Loading
+## Phase 3: Dynamic Level Loading [checkpoint: 6eb8c68]
 - [x] Task: Refactor `Main.cs` or `GameManager.cs` to use the `LevelSerializer` to load a level file at startup. [df511fd]
 - [x] Task: Implement the brick spawning logic that iterates through the loaded 2D array and instantiates the `Brick` scene. [df511fd]
 - [x] Task: Verify that the game correctly handles different brick health values from the serialized data. [df511fd]
