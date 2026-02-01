@@ -1,48 +1,43 @@
-[gd_scene format=3 uid="uid://cfeaat0rsofhf"]
+[gd_scene format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="1_hud"]
 [ext_resource type="PackedScene" path="res://scenes/environment/Walls.tscn" id="2_walls"]
 [ext_resource type="PackedScene" path="res://scenes/environment/DeathZone.tscn" id="3_death"]
+[ext_resource type="Script" path="res://scripts/ui/HUD.cs" id="4_m8jn0"]
 [ext_resource type="PackedScene" path="res://scenes/actors/Paddle.tscn" id="4_paddle"]
 [ext_resource type="PackedScene" path="res://scenes/actors/Ball.tscn" id="5_ball"]
-[ext_resource type="PackedScene" path="res://scenes/environment/Brick.tscn" id="6_brick"]
-[ext_resource type="Script" uid="uid://c8y1tqxx0n77l" path="res://scripts/Main.cs" id="7_main_script"]
+[ext_resource type="Script" path="res://scripts/environment/DeathZone.cs" id="7_dwsp0"]
+[ext_resource type="Script" path="res://scripts/Main.cs" id="7_main_script"]
+[ext_resource type="Script" path="res://scripts/actors/Paddle.cs" id="9_hqwje"]
+[ext_resource type="Script" path="res://scripts/actors/Ball.cs" id="10_77kyi"]
+[ext_resource type="Script" path="res://scripts/environment/GridGenerator.cs" id="11_gridgen"]
+[ext_resource type="PackedScene" path="res://scenes/environment/Brick.tscn" id="12_brick"]
 
 [node name="Main" type="Node" unique_id=2107162575]
 script = ExtResource("7_main_script")
 BallScene = ExtResource("5_ball")
 
-[node name="HUD" parent="." unique_id=2129497115 instance=ExtResource("1_hud")]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2129497115 instance=ExtResource("1_hud")]
+script = ExtResource("4_m8jn0")
 
-[node name="Walls" parent="." unique_id=1773374845 instance=ExtResource("2_walls")]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1773374845 instance=ExtResource("2_walls")]
 
-[node name="DeathZone" parent="." unique_id=1464241468 instance=ExtResource("3_death")]
+[node name="DeathZone" type="Area2D" parent="." unique_id=1464241468 instance=ExtResource("3_death")]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("7_dwsp0")
 
-[node name="Paddle" parent="." unique_id=1764628904 instance=ExtResource("4_paddle")]
+[node name="Paddle" type="CharacterBody2D" parent="." unique_id=1764628904 instance=ExtResource("4_paddle")]
 position = Vector2(640, 670)
+collision_mask = 6
+script = ExtResource("9_hqwje")
 
-[node name="Ball" parent="." unique_id=1728968256 instance=ExtResource("5_ball")]
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=1728968256 groups=["Balls"] instance=ExtResource("5_ball")]
 position = Vector2(640, 400)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("10_77kyi")
 
-[node name="Bricks" type="Node2D" parent="." unique_id=1406229305]
-
-[node name="Brick1" parent="Bricks" unique_id=342258501 instance=ExtResource("6_brick")]
-position = Vector2(340, 100)
-
-[node name="Brick2" parent="Bricks" unique_id=1352662287 instance=ExtResource("6_brick")]
-position = Vector2(440, 100)
-
-[node name="Brick3" parent="Bricks" unique_id=559669688 instance=ExtResource("6_brick")]
-position = Vector2(540, 100)
-
-[node name="Brick4" parent="Bricks" unique_id=326761268 instance=ExtResource("6_brick")]
-position = Vector2(640, 100)
-
-[node name="Brick5" parent="Bricks" unique_id=708163900 instance=ExtResource("6_brick")]
-position = Vector2(740, 100)
-
-[node name="Brick6" parent="Bricks" unique_id=782197880 instance=ExtResource("6_brick")]
-position = Vector2(840, 100)
-
-[node name="Brick7" parent="Bricks" unique_id=1256060890 instance=ExtResource("6_brick")]
-position = Vector2(940, 100)
+[node name="LevelGenerator" type="Node2D" parent="." unique_id=1791171149]
+script = ExtResource("11_gridgen")
+BrickScene = ExtResource("12_brick")
