@@ -7,29 +7,22 @@ namespace BreakMeOut.Scripts.Utils
     {
         public static (int Columns, int BrickWidth, float MarginX) CalculateLayout(int screenWidth, int spacing)
         {
-            // Logic: 
-            // We want roughly N columns.
-            // Width = (ScreenWidth / N) - Spacing.
-            // We want roughly integer Width.
-            // Let's iterate N from 10 to 20 to find the best fit where Width is close to 75px.
+            // Target width 40px.
+            // Constraint: Margin >= BrickWidth on both sides.
+            int targetWidth = 40;
             
-            // Based on manual calculation:
-            // 16 columns => 80px slot.
-            // Width = 75px.
-            // Margin = 80px (approx).
+            // Equation: ScreenWidth >= N * Width + (N - 1) * Spacing + 2 * Width
+            // ScreenWidth - Spacing >= N * (Width + Spacing) + 2 * Width
+            // ScreenWidth - Spacing - 2 * Width >= N * (Width + Spacing)
+            // N <= (1280 - 5 - 80) / (40 + 5) = 1195 / 45 = 26.55
             
-            int bestCols = 16;
-            int width = 75;
-            // int activeCols = 14; 
+            int columns = 26;
+            int brickWidth = 40;
             
-            // Calculate exact starting margin to center it
-            // Total content width = (14 * 75) + (13 * 5) = 1050 + 65 = 1115
-            // Screen = 1280.
-            // Margin = (1280 - 1115) / 2 = 165 / 2 = 82.5f.
+            float contentWidth = (columns * brickWidth) + ((columns - 1) * spacing);
+            float marginX = (screenWidth - contentWidth) / 2f;
             
-            float marginX = (screenWidth - ((14 * width) + (13 * spacing))) / 2f;
-            
-            return (14, width, marginX);
+            return (columns, brickWidth, marginX);
         }
     }
 }

@@ -7,6 +7,9 @@ public partial class GridGenerator : Node2D
     [Export] public PackedScene BrickScene;
     [Export] public int Rows = 10;
     
+    // Base size of the Brick scene content (ColorRect/CollisionShape)
+    private const float BaseBrickSize = 60f;
+    
     public override void _Ready()
     {
         GenerateGrid();
@@ -20,8 +23,7 @@ public partial class GridGenerator : Node2D
             return;
         }
 
-        // Get viewport size
-        int screenWidth = 1280; // Hardcoded for now as per spec/calculator logic
+        int screenWidth = 1280;
         int spacing = 5;
 
         var layout = BrickLayoutCalculator.CalculateLayout(screenWidth, spacing);
@@ -29,6 +31,16 @@ public partial class GridGenerator : Node2D
         GD.Print($"Generating Grid: Cols={layout.Columns}, Width={layout.BrickWidth}, MarginX={layout.MarginX}");
 
         int startY = 100; // Top margin
+
+        // Calculate scale factor
+        // Target is layout.BrickWidth (e.g., 40)
+        // Base is 60.
+        float scale = layout.BrickWidth / BaseBrickSize;
+        Vector2 scaleVec = new Vector2(scale, scale);
+        
+        // Effective height including spacing
+        // Visual height = layout.BrickWidth (since 40x40)
+        float rowStep = layout.BrickWidth + spacing;
 
         for (int r = 0; r < Rows; r++)
         {
@@ -38,15 +50,19 @@ public partial class GridGenerator : Node2D
                 AddChild(brick);
 
                 float x = layout.MarginX + c * (layout.BrickWidth + spacing);
-                float y = startY + r * (25 + spacing); // 25 is hardcoded height for now
+                float y = startY + r * rowStep;
 
-                brick.Position = new Vector2(x, y);
+                // Adjust position to be centered? 
+                // In Brick.tscn, ColorRect is offset -30, -30. So (0,0) is center.
+                // Our grid logic usually assumes top-left or center?
+                // If we position at (x,y), and (0,0) is center, the brick will be centered at (x,y).
+                // But our calculation `x` is the *left edge* of the column if we assume `c * width`.
+                // If `c=0`, `x = Margin`. If we place center there, the left half overlaps the margin.
+                // We should shift by `half width`.
                 
-                // Scale the brick visually if the sprite isn't already 75x25
-                // Assuming the Brick scene has a Sprite2D/ColorRect that needs scaling?
-                // Or we just rely on the Brick's default size.
-                // For this prototype, we'll assume the Brick scene needs to be adjusted or we scale it.
-                // Let's print the position for verification.
+                float halfSize = layout.BrickWidth / 2f;
+                brick.Position = new Vector2(x + halfSize, y + halfSize);
+                brick.Scale = scaleVec;
             }
         }
     }
