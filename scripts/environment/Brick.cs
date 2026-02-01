@@ -18,6 +18,7 @@ public partial class Brick : StaticBody2D
 		_colorRect = GetNodeOrNull<ColorRect>("ColorRect");
 		UpdateHealthDisplay();
 		UpdateColor();
+		AddToGroup("bricks");
 		GetNode<GameManager>("/root/GameManager").RegisterBrick();
 	}
 
@@ -39,6 +40,9 @@ public partial class Brick : StaticBody2D
 
 		if (Health <= 0)
 		{
+			// Remove from group before checking victory to prevent race conditions
+			RemoveFromGroup("bricks");
+
 			EmitSignal(SignalName.BrickDestroyed, GlobalPosition);
 
 			// Spawn new ball

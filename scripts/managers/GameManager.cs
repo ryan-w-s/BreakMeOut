@@ -26,7 +26,9 @@ public partial class GameManager : Node
 	public void BrickDestroyed()
 	{
 		BricksRemaining--;
-		if (BricksRemaining <= 0)
+		// Verify against actual brick count in scene to prevent race conditions
+		var actualBrickCount = GetTree().GetNodesInGroup("bricks").Count;
+		if (actualBrickCount <= 0)
 		{
 			IsVictory = true;
 			EmitSignal(SignalName.GameOver, true);
