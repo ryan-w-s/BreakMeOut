@@ -14,16 +14,16 @@ Implement the core logic for tracking level progress, unlocking levels, and savi
     - [x] Call `SaveProgress` when a level is unlocked.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Persistence & State Management' (Protocol in workflow.md)
 
-## Phase 2: Modular Level Loading
+## Phase 2: Modular Level Loading [checkpoint: d21efb4]
 Update the game scenes to load specific levels based on the `GameManager` state.
 
 - [x] Task: Update `GridGenerator` to be modular.
     - [x] Modify `GenerateGrid` to prioritize `GameManager.CurrentLevelPath` if set.
 - [x] Task: Refactor `Main.cs` for clean initialization.
     - [x] Ensure `GameManager.ResetGame()` is called appropriately.
-- [~] Task: Verify Level Loading with tests.
+- [x] Task: Verify Level Loading with tests.
     - [x] Add integration test (if feasible) or unit test in `GridGenerator` logic to verify path prioritization. (Manual verification planned)
-- [~] Task: Conductor - User Manual Verification 'Phase 2: Modular Level Loading' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Modular Level Loading' (Protocol in workflow.md)
 
 ## Phase 3: Level Selection UI
 Create the visual interface for players to select levels.
