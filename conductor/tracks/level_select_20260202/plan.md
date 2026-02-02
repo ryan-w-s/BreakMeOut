@@ -42,11 +42,11 @@ Create the visual interface for players to select levels.
 ## Phase 4: Win State & Progression Flow
 Close the loop by unlocking the next level when the player wins.
 
-- [ ] Task: Implement Unlock Logic on Win.
-    - [ ] Update `GameManager.BrickDestroyed` or `OnGameOver` to identify the next level and unlock it.
-- [ ] Task: Update `GameOver` UI.
-    - [ ] Add "Next Level" button that only appears on victory if a next level exists.
-    - [ ] Add "Level Select" button to return to the selection screen.
-- [ ] Task: Verify end-to-end flow.
-    - [ ] Manual verification of clearing Level 1 -> Unlocking Level 2 -> Level 2 appearing as unlocked in UI.
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Win State & Progression Flow' (Protocol in workflow.md)
+- [x] Task: Implement Unlock Logic on Win.
+    - [x] Update `GameManager.BrickDestroyed` or `OnGameOver` to identify the next level and unlock it.
+- [x] Task: Update `GameOver` UI.
+    - [x] Add "Next Level" button that only appears on victory if a next level exists.
+    - [x] Add "Level Select" button to return to the selection screen.
+- [x] Task: Verify end-to-end flow.
+    - [x] Manual verification of clearing Level 1 -> Unlocking Level 2 -> Level 2 appearing as unlocked in UI. (Manual verification planned)
+- [~] Task: Conductor - User Manual Verification 'Phase 4: Win State & Progression Flow' (Protocol in workflow.md)

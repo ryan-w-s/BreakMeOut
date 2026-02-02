@@ -2,6 +2,7 @@ using BreakMeOut.Scripts.Models;
 using Godot;
 using System;
 using System.Text.Json;
+using System.Collections.Generic;
 
 namespace BreakMeOut.Scripts.Utils
 {
@@ -25,6 +26,28 @@ namespace BreakMeOut.Scripts.Utils
             {
                 return null;
             }
+        }
+
+        public static List<string> GetLevelFiles()
+        {
+            string levelsDir = "res://levels/";
+            List<string> levelFiles = new List<string>();
+            using var dir = DirAccess.Open(levelsDir);
+            if (dir != null)
+            {
+                dir.ListDirBegin();
+                string fileName = dir.GetNext();
+                while (fileName != "")
+                {
+                    if (!dir.CurrentIsDir() && fileName.EndsWith(".json"))
+                    {
+                        levelFiles.Add(levelsDir + fileName);
+                    }
+                    fileName = dir.GetNext();
+                }
+                levelFiles.Sort();
+            }
+            return levelFiles;
         }
 
         public static void SaveProgress(ProgressionState state)

@@ -43,7 +43,21 @@ public partial class GameManager : Node
 		if (actualBrickCount <= 0)
 		{
 			IsVictory = true;
+			UnlockNextLevel();
 			EmitSignal(SignalName.GameOver, true);
+		}
+	}
+
+	public void UnlockNextLevel()
+	{
+		string current = Progression.CurrentLevelPath;
+		var levelFiles = ProgressionService.GetLevelFiles();
+
+		int currentIndex = levelFiles.IndexOf(current);
+		if (currentIndex != -1 && currentIndex < levelFiles.Count - 1)
+		{
+			string nextLevel = levelFiles[currentIndex + 1];
+			UnlockLevel(nextLevel);
 		}
 	}
 

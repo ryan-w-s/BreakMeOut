@@ -21,42 +21,24 @@ public partial class LevelSelect : Control
             child.QueueFree();
         }
 
-        string levelsDir = "res://levels/";
-        using var dir = DirAccess.Open(levelsDir);
-        if (dir != null)
+        var levelFiles = BreakMeOut.Scripts.Utils.ProgressionService.GetLevelFiles();
+        var gm = GetNode<GameManager>("/root/GameManager");
+
+        foreach (string path in levelFiles)
         {
-            dir.ListDirBegin();
-            string fileName = dir.GetNext();
+            Button btn = new Button();
+            btn.Text = Path.GetFileNameWithoutExtension(path).Replace("level", "Level ");
+            btn.CustomMinimumSize = new Vector2(100, 100);
             
-            List<string> levelFiles = new List<string>();
-            while (fileName != "")
+            bool isUnlocked = gm.Progression.UnlockedLevels.Contains(path);
+            btn.Disabled = !isUnlocked;
+            
+            if (isUnlocked)
             {
-                if (!dir.CurrentIsDir() && fileName.EndsWith(".json"))
-                {
-                    levelFiles.Add(levelsDir + fileName);
-                }
-                fileName = dir.GetNext();
+                btn.Pressed += () => OnLevelSelected(path);
             }
-            levelFiles.Sort();
-
-            var gm = GetNode<GameManager>("/root/GameManager");
-
-            foreach (string path in levelFiles)
-            {
-                Button btn = new Button();
-                btn.Text = Path.GetFileNameWithoutExtension(path).Replace("level", "Level ");
-                btn.CustomMinimumSize = new Vector2(100, 100);
-                
-                bool isUnlocked = gm.Progression.UnlockedLevels.Contains(path);
-                btn.Disabled = !isUnlocked;
-                
-                if (isUnlocked)
-                {
-                    btn.Pressed += () => OnLevelSelected(path);
-                }
-                
-                _grid.AddChild(btn);
-            }
+            
+            _grid.AddChild(btn);
         }
     }
 
