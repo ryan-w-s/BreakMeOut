@@ -10,6 +10,7 @@ public partial class Main : Node
         var gm = GetNode<GameManager>("/root/GameManager");
         if (gm != null)
         {
+            gm.ResetGame();
             gm.LivesChanged += OnLivesChanged;
             gm.GameOver += OnGameOver;
         }

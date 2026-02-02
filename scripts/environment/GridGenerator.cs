@@ -75,15 +75,22 @@ public partial class GridGenerator : Node2D
 
     private LevelData LoadLevel()
     {
+        string path = LevelPath;
+        var gm = GetNodeOrNull<GameManager>("/root/GameManager");
+        if (gm != null && !string.IsNullOrEmpty(gm.Progression.CurrentLevelPath))
+        {
+            path = gm.Progression.CurrentLevelPath;
+        }
+
         try
         {
-            if (!FileAccess.FileExists(LevelPath))
+            if (!FileAccess.FileExists(path))
             {
-                GD.PrintErr($"Level file not found: {LevelPath}");
+                GD.PrintErr($"Level file not found: {path}");
                 return null;
             }
 
-            using var file = FileAccess.Open(LevelPath, FileAccess.ModeFlags.Read);
+            using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
             string json = file.GetAsText();
             return LevelSerializer.Deserialize(json);
         }
