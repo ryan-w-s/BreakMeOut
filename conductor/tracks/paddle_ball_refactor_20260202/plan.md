@@ -1,6 +1,6 @@
 # Implementation Plan: Paddle & Ball Refactor
 
-## Phase 1: Paddle Input & Velocity tracking
+## Phase 1: Paddle Input & Velocity tracking [checkpoint: d163555]
 Refactor the paddle to support dual input methods and expose velocity data for ball interaction.
 
 - [x] Task: Update Paddle movement logic. b1e1836
@@ -12,7 +12,7 @@ Refactor the paddle to support dual input methods and expose velocity data for b
     - [x] Expose `GetCurrentVelocity()` or a property for the Ball to read.
 - [x] Task: Verify Paddle movement. 4625034
     - [x] Manual verification: Ensure smooth mouse tracking and clamping.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Paddle Input & Velocity tracking' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Paddle Input & Velocity tracking' (Protocol in workflow.md)
 
 ## Phase 2: Ball "Held" State & Launch Logic
 Implement the attachment logic and the user-triggered launch mechanism.
