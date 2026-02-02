@@ -7,11 +7,11 @@ Refactor the paddle to support dual input methods and expose velocity data for b
     - [x] Add Mouse support to `Paddle.cs`: follow mouse X-position.
     - [x] Maintain Arrow Key support as an additive offset or override.
     - [x] Clamp position within screen bounds.
-- [ ] Task: Implement Velocity tracking in `Paddle`.
-    - [ ] Calculate horizontal velocity (`X` delta per frame).
-    - [ ] Expose `GetCurrentVelocity()` or a property for the Ball to read.
-- [ ] Task: Verify Paddle movement.
-    - [ ] Manual verification: Ensure smooth mouse tracking and clamping.
+- [x] Task: Implement Velocity tracking in `Paddle`. 4625034
+    - [x] Calculate horizontal velocity (`X` delta per frame).
+    - [x] Expose `GetCurrentVelocity()` or a property for the Ball to read.
+- [x] Task: Verify Paddle movement. 4625034
+    - [x] Manual verification: Ensure smooth mouse tracking and clamping.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Paddle Input & Velocity tracking' (Protocol in workflow.md)
 
 ## Phase 2: Ball "Held" State & Launch Logic
