@@ -53,12 +53,20 @@ public partial class Paddle : CharacterBody2D
 
 		// Move via Velocity to respect physics engine (collisions)
 		// We want to reach targetX in exactly 'dt' time.
-		// Velocity = Distance / Time
-		float dist = targetX - currentX;
-		Velocity = new Vector2(dist / dt, 0);
+		float velX = PaddleMovementCalculator.CalculateVelocity(currentX, targetX, dt);
+		Velocity = new Vector2(velX, 0);
 
 		MoveAndSlide();
 
 		_lastMouseX = mouseX;
+	}
+
+	/// <summary>
+	/// Returns the current velocity of the paddle.
+	/// Used by the Ball to calculate bounce angles.
+	/// </summary>
+	public Vector2 GetCurrentVelocity()
+	{
+		return Velocity;
 	}
 }

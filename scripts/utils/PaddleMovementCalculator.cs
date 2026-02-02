@@ -38,5 +38,11 @@ namespace BreakMeOut.Scripts.Utils
 
             return Math.Clamp(nextX, minX, maxX);
         }
+
+        public static float CalculateVelocity(float currentX, float targetX, float delta)
+        {
+            if (delta <= 0.000001f) return 0f;
+            return (targetX - currentX) / delta;
+        }
     }
 }

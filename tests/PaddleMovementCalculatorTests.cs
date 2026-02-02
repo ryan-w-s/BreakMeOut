@@ -62,5 +62,18 @@ namespace BreakMeOut.Tests
 
             Assert.That(newX, Is.EqualTo(min));
         }
+
+        [Test]
+        public void CalculateVelocity_ReturnsCorrectSpeed()
+        {
+            float currentX = 100f;
+            float targetX = 150f;
+            float delta = 0.5f;
+
+            // Velocity = (150 - 100) / 0.5 = 50 / 0.5 = 100
+            float vel = PaddleMovementCalculator.CalculateVelocity(currentX, targetX, delta);
+
+            Assert.That(vel, Is.EqualTo(100f));
+        }
     }
 }
