@@ -43,6 +43,32 @@ This project is in initial setup. As development progresses, typical Godot patte
 - **Script attachment**: Scripts are attached to nodes in the scene tree
 - **Main scene**: Designate a main scene as the entry point (Project Settings > Application > Run > Main Scene)
 
+## Level Design
+
+Levels are data-driven and stored as JSON files in the `levels/` directory. Each level file defines the layout and properties of the bricks.
+
+### Level JSON Structure
+
+- **Name**: The display name of the level.
+- **Rows**: Number of rows in the grid.
+- **Columns**: Number of columns in the grid.
+- **BrickGrid**: A 2D array of integers representing the grid.
+  - `0`: Empty space (no brick).
+  - `> 0`: Brick health
+
+Example `level1.json`:
+```json
+{
+  "Name": "Classic Level 1",
+  "Rows": 10,
+  "Columns": 26,
+  "BrickGrid": [
+    [1, 1, 1, ...],
+    [1, 0, 0, ...]
+  ]
+}
+```
+
 ## Project Structure (Recommended)
 
 The project root will typically contain:
