@@ -39,7 +39,7 @@ Create the visual interface for players to select levels.
     - [x] Button click sets `GameManager.CurrentLevelPath` and switches to `Main.tscn`.
 - [x] Task: Conductor - User Manual Verification 'Phase 3: Level Selection UI' (Protocol in workflow.md)
 
-## Phase 4: Win State & Progression Flow
+## Phase 4: Win State & Progression Flow [checkpoint: 83a1bc0]
 Close the loop by unlocking the next level when the player wins.
 
 - [x] Task: Implement Unlock Logic on Win.
@@ -49,4 +49,4 @@ Close the loop by unlocking the next level when the player wins.
     - [x] Add "Level Select" button to return to the selection screen.
 - [x] Task: Verify end-to-end flow.
     - [x] Manual verification of clearing Level 1 -> Unlocking Level 2 -> Level 2 appearing as unlocked in UI. (Manual verification planned)
-- [~] Task: Conductor - User Manual Verification 'Phase 4: Win State & Progression Flow' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Win State & Progression Flow' (Protocol in workflow.md)
