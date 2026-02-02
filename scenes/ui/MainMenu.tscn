@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://i3aflfo5mr2r"]
+[gd_scene format=3]
 
-[ext_resource type="Script" uid="uid://bk7i0tuuux86p" path="res://scripts/ui/MainMenu.cs" id="1_script"]
+[ext_resource type="Script" path="res://scripts/ui/MainMenu.cs" id="1_script"]
 
 [node name="MainMenu" type="Control" unique_id=114030431]
 layout_mode = 3
@@ -38,3 +38,7 @@ text = "START GAME"
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1656200001]
 layout_mode = 2
 text = "QUIT"
+
+[node name="SelectLevelButton" type="Button" parent="VBoxContainer" unique_id=226424162]
+layout_mode = 2
+text = "Select Level"

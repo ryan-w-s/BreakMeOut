@@ -28,16 +28,16 @@ Update the game scenes to load specific levels based on the `GameManager` state.
 ## Phase 3: Level Selection UI
 Create the visual interface for players to select levels.
 
-- [ ] Task: Create `LevelSelect.tscn` and `LevelSelect.cs`.
-    - [ ] Implement directory scanning for `res://levels/*.json`.
-    - [ ] Generate UI buttons dynamically for each level found.
-    - [ ] Implement locked/unlocked visual states for buttons.
-- [ ] Task: Integrate Level Select into Main Menu.
-    - [ ] Add "Select Level" button to `MainMenu.tscn`.
-    - [ ] Connect signal to switch to `LevelSelect.tscn`.
-- [ ] Task: Implement Navigation Logic.
-    - [ ] Button click sets `GameManager.CurrentLevelPath` and switches to `Main.tscn`.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Level Selection UI' (Protocol in workflow.md)
+- [x] Task: Create `LevelSelect.tscn` and `LevelSelect.cs`.
+    - [x] Implement directory scanning for `res://levels/*.json`.
+    - [x] Generate UI buttons dynamically for each level found.
+    - [x] Implement locked/unlocked visual states for buttons.
+- [x] Task: Integrate Level Select into Main Menu.
+    - [x] Add "Select Level" button to `MainMenu.tscn`.
+    - [x] Connect signal to switch to `LevelSelect.tscn`.
+- [x] Task: Implement Navigation Logic.
+    - [x] Button click sets `GameManager.CurrentLevelPath` and switches to `Main.tscn`.
+- [~] Task: Conductor - User Manual Verification 'Phase 3: Level Selection UI' (Protocol in workflow.md)
 
 ## Phase 4: Win State & Progression Flow
 Close the loop by unlocking the next level when the player wins.
