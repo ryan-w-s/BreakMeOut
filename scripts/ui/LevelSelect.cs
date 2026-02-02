@@ -15,6 +15,12 @@ public partial class LevelSelect : Control
 
     private void PopulateLevels()
     {
+        if (_grid == null)
+        {
+            GD.PrintErr("GridContainer not found!");
+            return;
+        }
+
         // Clear existing buttons
         foreach (Node child in _grid.GetChildren())
         {
@@ -22,6 +28,8 @@ public partial class LevelSelect : Control
         }
 
         var levelFiles = BreakMeOut.Scripts.Utils.ProgressionService.GetLevelFiles();
+        GD.Print($"Found {levelFiles.Count} levels.");
+        
         var gm = GetNode<GameManager>("/root/GameManager");
 
         foreach (string path in levelFiles)

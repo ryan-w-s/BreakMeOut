@@ -47,6 +47,10 @@ namespace BreakMeOut.Scripts.Utils
                 }
                 levelFiles.Sort();
             }
+            else
+            {
+                GD.PrintErr($"Failed to open levels directory: {levelsDir}");
+            }
             return levelFiles;
         }
 
