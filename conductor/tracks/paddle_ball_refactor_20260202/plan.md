@@ -17,9 +17,9 @@ Refactor the paddle to support dual input methods and expose velocity data for b
 ## Phase 2: Ball "Held" State & Launch Logic
 Implement the attachment logic and the user-triggered launch mechanism.
 
-- [ ] Task: Refactor `Ball.cs` state management.
-    - [ ] Add `IsHeld` boolean or a State Enum.
-    - [ ] In `_Process`, if Held, update position to match the paddle + offset.
+- [x] Task: Refactor `Ball.cs` state management. d2b5ce2
+    - [x] Add `IsHeld` boolean or a State Enum.
+    - [x] In `_Process`, if Held, update position to match the paddle + offset.
 - [ ] Task: Implement Launch mechanism.
     - [ ] Check for `ui_accept` (Space) or `mouse_left_click` in `Ball.cs`.
     - [ ] On launch: set state to Active, apply upward impulse, and add horizontal bias from Paddle velocity.
