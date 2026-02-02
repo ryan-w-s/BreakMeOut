@@ -1,5 +1,8 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using BreakMeOut.Scripts.Models;
+using BreakMeOut.Scripts.Utils;
 
 public partial class GameManager : Node
 {
@@ -13,9 +16,18 @@ public partial class GameManager : Node
 	public int BricksRemaining { get; private set; } = 0;
 	public bool IsVictory { get; private set; } = false;
 
+	public ProgressionState Progression { get; private set; } = new ProgressionState();
+
 	public override void _Ready()
 	{
 		GD.Print("GameManager Initialized");
+        Progression = ProgressionService.LoadProgress();
+	}
+
+	public void UnlockLevel(string path)
+	{
+		Progression.UnlockLevel(path);
+        ProgressionService.SaveProgress(Progression);
 	}
 
 	public void RegisterBrick()
