@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Fix Level Select screen: empty grid and broken back button.**
-*Link: [./tracks/fix_level_select_20260202/](./tracks/fix_level_select_20260202/)*
+- [~] **Track: Fix Level Select screen (Attempt 2): empty grid and broken back button persist.**
+*Link: [./tracks/fix_level_select_v2_20260202/](./tracks/fix_level_select_v2_20260202/)*

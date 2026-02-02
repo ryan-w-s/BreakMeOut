@@ -32,6 +32,7 @@ namespace BreakMeOut.Scripts.Utils
         {
             string levelsDir = "res://levels/";
             List<string> levelFiles = new List<string>();
+            
             using var dir = DirAccess.Open(levelsDir);
             if (dir != null)
             {
@@ -49,7 +50,7 @@ namespace BreakMeOut.Scripts.Utils
             }
             else
             {
-                GD.PrintErr($"Failed to open levels directory: {levelsDir}");
+                GD.PrintErr($"Failed to open levels directory: {levelsDir} - Error: {DirAccess.GetOpenError()}");
             }
             return levelFiles;
         }

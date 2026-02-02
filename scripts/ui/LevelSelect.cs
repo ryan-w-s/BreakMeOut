@@ -5,60 +5,61 @@ using System.IO;
 
 public partial class LevelSelect : Control
 {
-    private GridContainer _grid;
+	private GridContainer _grid;
 
-    public override void _Ready()
-    {
-        _grid = GetNode<GridContainer>("VBoxContainer/GridContainer");
-        PopulateLevels();
-    }
+	public override void _Ready()
+	{
+		_grid = GetNode<GridContainer>("VBoxContainer/GridContainer");
+		var backBtn = GetNode<Button>("VBoxContainer/BackButton");
+		
+		if (backBtn != null)
+		{
+			backBtn.Pressed += OnBackPressed;
+		}
 
-    private void PopulateLevels()
-    {
-        if (_grid == null)
-        {
-            GD.PrintErr("GridContainer not found!");
-            return;
-        }
+		PopulateLevels();
+	}
 
-        // Clear existing buttons
-        foreach (Node child in _grid.GetChildren())
-        {
-            child.QueueFree();
-        }
+	private void PopulateLevels()
+	{
+		if (_grid == null) return;
 
-        var levelFiles = BreakMeOut.Scripts.Utils.ProgressionService.GetLevelFiles();
-        GD.Print($"Found {levelFiles.Count} levels.");
-        
-        var gm = GetNode<GameManager>("/root/GameManager");
+		// Clear existing buttons
+		foreach (Node child in _grid.GetChildren())
+		{
+			child.QueueFree();
+		}
 
-        foreach (string path in levelFiles)
-        {
-            Button btn = new Button();
-            btn.Text = Path.GetFileNameWithoutExtension(path).Replace("level", "Level ");
-            btn.CustomMinimumSize = new Vector2(100, 100);
-            
-            bool isUnlocked = gm.Progression.UnlockedLevels.Contains(path);
-            btn.Disabled = !isUnlocked;
-            
-            if (isUnlocked)
-            {
-                btn.Pressed += () => OnLevelSelected(path);
-            }
-            
-            _grid.AddChild(btn);
-        }
-    }
+		var levelFiles = BreakMeOut.Scripts.Utils.ProgressionService.GetLevelFiles();
+		var gm = GetNode<GameManager>("/root/GameManager");
 
-    private void OnLevelSelected(string path)
-    {
-        var gm = GetNode<GameManager>("/root/GameManager");
-        gm.Progression.CurrentLevelPath = path;
-        GetTree().ChangeSceneToFile("res://scenes/Main.tscn");
-    }
+		foreach (string path in levelFiles)
+		{
+			Button btn = new Button();
+			btn.Text = Path.GetFileNameWithoutExtension(path).Replace("level", "Level ");
+			btn.CustomMinimumSize = new Vector2(100, 100);
+			
+			bool isUnlocked = gm.Progression.UnlockedLevels.Contains(path);
+			btn.Disabled = !isUnlocked;
+			
+			if (isUnlocked)
+			{
+				btn.Pressed += () => OnLevelSelected(path);
+			}
+			
+			_grid.AddChild(btn);
+		}
+	}
 
-    public void OnBackPressed()
-    {
-        GetTree().ChangeSceneToFile("res://scenes/ui/MainMenu.tscn");
-    }
+	private void OnLevelSelected(string path)
+	{
+		var gm = GetNode<GameManager>("/root/GameManager");
+		gm.Progression.CurrentLevelPath = path;
+		GetTree().ChangeSceneToFile("res://scenes/Main.tscn");
+	}
+
+	public void OnBackPressed()
+	{
+		GetTree().ChangeSceneToFile("res://scenes/ui/MainMenu.tscn");
+	}
 }
