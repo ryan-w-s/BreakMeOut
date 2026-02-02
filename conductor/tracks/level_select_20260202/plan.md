@@ -1,6 +1,6 @@
 # Implementation Plan: Level Selection and Progression
 
-## Phase 1: Persistence & State Management
+## Phase 1: Persistence & State Management [checkpoint: 6f34972]
 Implement the core logic for tracking level progress, unlocking levels, and saving/loading data.
 
 - [x] Task: Update `GameManager` with level state and logic.
@@ -12,7 +12,7 @@ Implement the core logic for tracking level progress, unlocking levels, and savi
 - [x] Task: Integrate Persistence into `GameManager`.
     - [x] Call `LoadProgress` on `GameManager._Ready`.
     - [x] Call `SaveProgress` when a level is unlocked.
-- [~] Task: Conductor - User Manual Verification 'Phase 1: Persistence & State Management' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Persistence & State Management' (Protocol in workflow.md)
 
 ## Phase 2: Modular Level Loading
 Update the game scenes to load specific levels based on the `GameManager` state.
