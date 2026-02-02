@@ -25,7 +25,7 @@ Update the game scenes to load specific levels based on the `GameManager` state.
     - [x] Add integration test (if feasible) or unit test in `GridGenerator` logic to verify path prioritization. (Manual verification planned)
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Modular Level Loading' (Protocol in workflow.md)
 
-## Phase 3: Level Selection UI
+## Phase 3: Level Selection UI [checkpoint: ff855c9]
 Create the visual interface for players to select levels.
 
 - [x] Task: Create `LevelSelect.tscn` and `LevelSelect.cs`.
@@ -37,7 +37,7 @@ Create the visual interface for players to select levels.
     - [x] Connect signal to switch to `LevelSelect.tscn`.
 - [x] Task: Implement Navigation Logic.
     - [x] Button click sets `GameManager.CurrentLevelPath` and switches to `Main.tscn`.
-- [~] Task: Conductor - User Manual Verification 'Phase 3: Level Selection UI' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Level Selection UI' (Protocol in workflow.md)
 
 ## Phase 4: Win State & Progression Flow
 Close the loop by unlocking the next level when the player wins.
