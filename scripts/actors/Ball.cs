@@ -6,6 +6,7 @@ public partial class Ball : CharacterBody2D
 {
 	[Export] public float Speed = 500.0f;
 	[Export] public Vector2 HeldOffset = new Vector2(0, -30);
+	[Export] public float LaunchBiasFactor = 0.5f;
 	
 	// Initial direction - will be randomized in game logic
 	public Vector2 Direction = new Vector2(0.5f, -1.0f).Normalized();
@@ -20,6 +21,12 @@ public partial class Ball : CharacterBody2D
 			if (_paddle != null && IsInstanceValid(_paddle))
 			{
 				Position = BallStateCalculator.CalculateHeldPosition(_paddle.Position, HeldOffset);
+			}
+
+			// Launch Input Check
+			if (Input.IsActionJustPressed("ui_accept") || Input.IsActionJustPressed("ui_left"))
+			{
+				Launch();
 			}
 		}
 		else
@@ -54,8 +61,18 @@ public partial class Ball : CharacterBody2D
 	public void Launch()
 	{
 		if (!IsHeld) return;
+		
+		Vector2 paddleVel = Vector2.Zero;
+		if (_paddle != null && IsInstanceValid(_paddle))
+		{
+			paddleVel = _paddle.GetCurrentVelocity();
+		}
+
+		Vector2 launchVel = BallStateCalculator.CalculateLaunchVelocity(Speed, paddleVel, LaunchBiasFactor);
+		
+		// Set Direction based on calculated velocity
+		Direction = launchVel.Normalized();
+		
 		IsHeld = false;
-		// Launch logic will be refined in next task
-		Direction = Vector2.Up;
 	}
 }
