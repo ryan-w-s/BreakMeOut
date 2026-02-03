@@ -25,8 +25,8 @@ Implement the attachment logic and the user-triggered launch mechanism.
     - [x] On launch: set state to Active, apply upward impulse, and add horizontal bias from Paddle velocity.
 - [x] Task: Update `Main.cs` spawn logic. 61050fc
     - [x] Ensure new balls are initialized in the "Held" state and linked to the Paddle instance.
-- [ ] Task: Test Launch logic.
-    - [ ] Write unit tests for state transitions and initial velocity calculation.
+- [x] Task: Test Launch logic. bede65c
+    - [x] Write unit tests for state transitions and initial velocity calculation.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Ball "Held" State & Launch Logic' (Protocol in workflow.md)
 
 ## Phase 3: Dynamic Physics Influence
