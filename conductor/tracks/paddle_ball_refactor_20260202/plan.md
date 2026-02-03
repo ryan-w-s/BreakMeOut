@@ -14,7 +14,7 @@ Refactor the paddle to support dual input methods and expose velocity data for b
     - [x] Manual verification: Ensure smooth mouse tracking and clamping.
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Paddle Input & Velocity tracking' (Protocol in workflow.md)
 
-## Phase 2: Ball "Held" State & Launch Logic
+## Phase 2: Ball "Held" State & Launch Logic [checkpoint: d6b3e59]
 Implement the attachment logic and the user-triggered launch mechanism.
 
 - [x] Task: Refactor `Ball.cs` state management. d2b5ce2
@@ -27,7 +27,7 @@ Implement the attachment logic and the user-triggered launch mechanism.
     - [x] Ensure new balls are initialized in the "Held" state and linked to the Paddle instance.
 - [x] Task: Test Launch logic. bede65c
     - [x] Write unit tests for state transitions and initial velocity calculation.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: Ball "Held" State & Launch Logic' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: Ball "Held" State & Launch Logic' (Protocol in workflow.md)
 
 ## Phase 3: Dynamic Physics Influence
 Apply the paddle's movement to the ball's bounce trajectory during active gameplay.
