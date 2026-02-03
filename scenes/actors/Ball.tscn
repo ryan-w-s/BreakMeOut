@@ -1,19 +1,18 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/actors/Ball.cs" id="1_script"]
-[ext_resource type="Texture2D" path="res://icon.png" id="2_icon"]
+[ext_resource type="Script" path="res://scripts/actors/BallVisuals.cs" id="2_visuals"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 15.0
 
-[node name="Ball" type="CharacterBody2D" groups=["Balls"]]
+[node name="Ball" type="CharacterBody2D" unique_id=1758552286 groups=["Balls"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.469, 0.469)
-texture = ExtResource("2_icon")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=816191002]
 shape = SubResource("CircleShape2D_1")
+
+[node name="BallVisuals" type="Node2D" parent="." unique_id=2037437081]
+script = ExtResource("2_visuals")

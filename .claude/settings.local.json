@@ -18,7 +18,11 @@
       "mcp__web-search-prime__webSearchPrime",
       "mcp__zread__read_file",
       "Bash(dotnet test:*)",
-      "mcp__zread__get_repo_structure"
+      "mcp__zread__get_repo_structure",
+      "mcp__godot-mcp__create_resource",
+      "mcp__godot-mcp__query_node",
+      "mcp__godot-mcp__add_node",
+      "mcp__godot-mcp__attach_script"
     ]
   }
 }

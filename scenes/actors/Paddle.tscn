@@ -1,18 +1,20 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/actors/Paddle.cs" id="1_script"]
-[ext_resource type="Texture2D" path="res://icon.png" id="2_icon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
 size = Vector2(120, 30)
 
-[node name="Paddle" type="CharacterBody2D"]
+[node name="Paddle" type="CharacterBody2D" unique_id=903088599]
 collision_mask = 6
 script = ExtResource("1_script")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.875, 0.469)
-texture = ExtResource("2_icon")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=532729446]
 shape = SubResource("RectangleShape2D_1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2127996284]
+offset_left = -60.0
+offset_top = -15.0
+offset_right = 60.0
+offset_bottom = 15.0
+color = Color(0.2901961, 0.5647059, 0.8862745, 1)
