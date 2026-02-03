@@ -20,9 +20,9 @@ Implement the attachment logic and the user-triggered launch mechanism.
 - [x] Task: Refactor `Ball.cs` state management. d2b5ce2
     - [x] Add `IsHeld` boolean or a State Enum.
     - [x] In `_Process`, if Held, update position to match the paddle + offset.
-- [ ] Task: Implement Launch mechanism.
-    - [ ] Check for `ui_accept` (Space) or `mouse_left_click` in `Ball.cs`.
-    - [ ] On launch: set state to Active, apply upward impulse, and add horizontal bias from Paddle velocity.
+- [x] Task: Implement Launch mechanism. ce4149b
+    - [x] Check for `ui_accept` (Space) or `mouse_left_click` in `Ball.cs`.
+    - [x] On launch: set state to Active, apply upward impulse, and add horizontal bias from Paddle velocity.
 - [ ] Task: Update `Main.cs` spawn logic.
     - [ ] Ensure new balls are initialized in the "Held" state and linked to the Paddle instance.
 - [ ] Task: Test Launch logic.
