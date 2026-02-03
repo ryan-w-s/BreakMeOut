@@ -32,11 +32,11 @@ Implement the attachment logic and the user-triggered launch mechanism.
 ## Phase 3: Dynamic Physics Influence
 Apply the paddle's movement to the ball's bounce trajectory during active gameplay.
 
-- [ ] Task: Modify Ball collision logic.
-    - [ ] Detect when colliding with the Paddle.
-    - [ ] Apply a horizontal bias to the reflected velocity vector based on the Paddle's current velocity.
-- [ ] Task: Refine "Slight change in angle" math.
-    - [ ] Ensure the bias is balanced (not too extreme) to keep gameplay fair.
-- [ ] Task: Verify dynamic physics.
-    - [ ] Manual verification: Hit the ball while moving the paddle quickly and observe trajectory changes.
+- [x] Task: Modify Ball collision logic. 68c1ff2
+    - [x] Detect when colliding with the Paddle.
+    - [x] Apply a horizontal bias to the reflected velocity vector based on the Paddle's current velocity.
+- [x] Task: Refine "Slight change in angle" math. 68c1ff2
+    - [x] Ensure the bias is balanced (not too extreme) to keep gameplay fair.
+- [x] Task: Verify dynamic physics. 68c1ff2
+    - [x] Manual verification: Hit the ball while moving the paddle quickly and observe trajectory changes.
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Dynamic Physics Influence' (Protocol in workflow.md)
