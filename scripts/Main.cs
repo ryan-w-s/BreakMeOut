@@ -14,6 +14,30 @@ public partial class Main : Node
             gm.LivesChanged += OnLivesChanged;
             gm.GameOver += OnGameOver;
         }
+
+        // Attach initial ball if present
+        CallDeferred("AttachInitialBall");
+    }
+
+    private void AttachInitialBall()
+    {
+        var paddle = GetNodeOrNull<Paddle>("Paddle");
+        // If not direct child, try finding by type/group
+        if (paddle == null)
+        {
+             paddle = GetNodeOrNull<Paddle>("../Paddle") ?? (Paddle)GetTree().GetFirstNodeInGroup("Paddle");
+        }
+
+        var ball = GetNodeOrNull<Ball>("Ball"); // Assuming named "Ball" in scene
+        if (ball == null)
+        {
+             ball = (Ball)GetTree().GetFirstNodeInGroup("Balls");
+        }
+
+        if (paddle != null && ball != null)
+        {
+            ball.AttachToPaddle(paddle);
+        }
     }
 
     public override void _ExitTree()

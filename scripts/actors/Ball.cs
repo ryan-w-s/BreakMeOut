@@ -11,7 +11,7 @@ public partial class Ball : CharacterBody2D
 	// Initial direction - will be randomized in game logic
 	public Vector2 Direction = new Vector2(0.5f, -1.0f).Normalized();
 	
-	public bool IsHeld { get; private set; } = true;
+	public bool IsHeld { get; private set; } = false;
 	private Paddle _paddle;
 
 	public override void _PhysicsProcess(double delta)
@@ -24,7 +24,7 @@ public partial class Ball : CharacterBody2D
 			}
 
 			// Launch Input Check
-			if (Input.IsActionJustPressed("ui_accept") || Input.IsActionJustPressed("ui_left"))
+			if (Input.IsActionJustPressed("ui_accept") || Input.IsMouseButtonPressed(MouseButton.Left))
 			{
 				Launch();
 			}
