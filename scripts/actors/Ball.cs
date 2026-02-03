@@ -36,17 +36,29 @@ public partial class Ball : CharacterBody2D
 
 			if (collision != null)
 			{
-				// Bounce
-				Direction = Direction.Bounce(collision.GetNormal());
-				
 				// Check what we hit
 				if (collision.GetCollider() is Brick brick)
 				{
+					// Standard Bounce for bricks
+					Direction = Direction.Bounce(collision.GetNormal());
 					brick.Hit();
 				}
 				else if (collision.GetCollider() is Paddle paddle)
 				{
-					// Optional: Adjust angle based on paddle hit position
+					// Dynamic Bounce for paddle
+					Vector2 paddleVel = paddle.GetCurrentVelocity();
+					Direction = BallStateCalculator.CalculateBounceDirection(
+						Direction,
+						collision.GetNormal(),
+						paddleVel,
+						LaunchBiasFactor, // Reusing same factor for now
+						Speed
+					);
+				}
+				else
+				{
+					// Standard Bounce for everything else (walls)
+					Direction = Direction.Bounce(collision.GetNormal());
 				}
 			}
 		}

@@ -33,5 +33,32 @@ namespace BreakMeOut.Scripts.Utils
             Vector2 launchDir = new Vector2(biasX / speed, -1).Normalized();
             return launchDir * speed;
         }
+
+        public static Vector2 CalculateBounceDirection(
+            Vector2 currentDirection,
+            Vector2 normal,
+            Vector2 paddleVelocity,
+            float biasFactor,
+            float speed
+        )
+        {
+            Vector2 reflected = currentDirection.Bounce(normal);
+            
+            // Apply horizontal bias only if we hit the paddle (normal is roughly Up)
+            // But we can just always apply it if paddleVelocity is provided.
+            float biasX = (paddleVelocity.X * biasFactor) / speed;
+            
+            Vector2 biasedDir = (reflected + new Vector2(biasX, 0)).Normalized();
+            
+            // Safety: Ensure it doesn't become too shallow (almost horizontal)
+            // If |Y| is too small, we might want to clamp it.
+            if (Mathf.Abs(biasedDir.Y) < 0.2f)
+            {
+                biasedDir.Y = biasedDir.Y > 0 ? 0.2f : -0.2f;
+                biasedDir = biasedDir.Normalized();
+            }
+
+            return biasedDir;
+        }
     }
 }
