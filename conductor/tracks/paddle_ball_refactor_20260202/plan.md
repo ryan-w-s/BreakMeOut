@@ -29,7 +29,7 @@ Implement the attachment logic and the user-triggered launch mechanism.
     - [x] Write unit tests for state transitions and initial velocity calculation.
 - [x] Task: Conductor - User Manual Verification 'Phase 2: Ball "Held" State & Launch Logic' (Protocol in workflow.md)
 
-## Phase 3: Dynamic Physics Influence
+## Phase 3: Dynamic Physics Influence [checkpoint: 9b84761]
 Apply the paddle's movement to the ball's bounce trajectory during active gameplay.
 
 - [x] Task: Modify Ball collision logic. 68c1ff2
@@ -39,4 +39,4 @@ Apply the paddle's movement to the ball's bounce trajectory during active gamepl
     - [x] Ensure the bias is balanced (not too extreme) to keep gameplay fair.
 - [x] Task: Verify dynamic physics. 68c1ff2
     - [x] Manual verification: Hit the ball while moving the paddle quickly and observe trajectory changes.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Dynamic Physics Influence' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: Dynamic Physics Influence' (Protocol in workflow.md)
