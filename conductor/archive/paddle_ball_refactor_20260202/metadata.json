@@ -1,0 +1,8 @@
+{
+  "track_id": "paddle_ball_refactor_20260202",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-02-02T05:19:00Z",
+  "updated_at": "2026-02-02T05:19:00Z",
+  "description": "Refactor paddle and ball movement: mouse control, held state, and dynamic angles."
+}
