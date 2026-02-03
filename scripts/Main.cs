@@ -38,9 +38,9 @@ public partial class Main : Node
     {
         // Check if any valid balls exist (ignoring those about to be deleted)
         var balls = GetTree().GetNodesInGroup("Balls");
-        foreach (Node ball in balls)
+        foreach (Node ballNode in balls)
         {
-            if (IsInstanceValid(ball) && !ball.IsQueuedForDeletion())
+            if (IsInstanceValid(ballNode) && !ballNode.IsQueuedForDeletion())
             {
                 return;
             }
@@ -48,9 +48,26 @@ public partial class Main : Node
 
         if (BallScene != null)
         {
-            var ball = BallScene.Instantiate<Node2D>();
-            ball.GlobalPosition = new Vector2(640, 600);
-            AddChild(ball);
+            // Find Paddle
+            var paddle = GetNodeOrNull<Paddle>("Paddle");
+            // If not direct child, try finding by type/group
+            if (paddle == null)
+            {
+                // Assuming Paddle is a unique node in the scene for now
+                paddle = GetNodeOrNull<Paddle>("../Paddle") ?? (Paddle)GetTree().GetFirstNodeInGroup("Paddle");
+            }
+
+            if (paddle != null && IsInstanceValid(paddle))
+            {
+                var ballInstance = BallScene.Instantiate<Ball>();
+                ballInstance.AddToGroup("Balls"); // Ensure it's in the group
+                AddChild(ballInstance);
+                ballInstance.AttachToPaddle(paddle);
+            }
+            else
+            {
+                GD.PrintErr("Main: Could not find Paddle to attach new Ball to!");
+            }
         }
     }
 
